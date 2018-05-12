@@ -1,4 +1,17 @@
+<?php
+/*
+	/CREATE/{encoded-data}/
+	
+
+	if (!isset($_REQUEST['name'],$_REQUEST['wallet'],$_REQUEST[]
+	
+	*/
+	
 function base32decode($data) {	
+	//make input case insensitive
+	$data=strtoupper($data);
+
+
 	//decode to binary stream
 	$letters=[
 		"0"=>'00000',
@@ -107,3 +120,19 @@ function base32decode($data) {
 	}
 	return json_decode($json,true);
 }
+print_r(base32decode('Z5YJ9YKXFTFMJFMZA62ZKZDYKF8VDZUFNZ9ANXYVX7TG'));
+	
+	
+	
+	
+	
+	/*
+	
+	var alphabets={
+		"":					'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',		//0 +6=6bit
+		"111110":				'[]{}":,_',																//6 +3=9bit
+		"111111":				' !#$%&\'()*+-./;<=>?@\^`|~',		//26 used 00000	 to 11001			//6 +5=11bit
+		"11111111010":		0-31																	//11+5=16bit
+//		"11111111011":		full unicode can be put here		
+		"11111111":			128-255								//all 8bits							//8 +8=16bit	
+	}*/
